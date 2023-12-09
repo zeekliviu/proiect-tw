@@ -1,0 +1,59 @@
+#home-container {
+  margin-top: 10vh;
+  display: flex;
+  position: fixed;
+  margin-left: 15%;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+#home-header {
+  font-size: 3.5rem;
+  -webkit-text-stroke-width: 0.05px;
+  -webkit-text-stroke-color: white;
+  font-family: "Cocogose Pro";
+  width: 100%;
+  text-align: center;
+  opacity: 0;
+  animation: fadeIn 1s ease-in forwards;
+}
+
+#home-buttons-container {
+  display: flex;
+  flex-direction: row;
+  margin-left: -15%;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.home-button {
+  opacity: 0;
+  margin-right: 30%;
+  margin-top: 30%;
+  animation: fadeIn 1s ease-in 1s forwards;
+  font-size: 2.5rem;
+}
+
+@media screen and (max-width: 768px) {
+  #home-header {
+    font-size: 2rem;
+    margin-left: -10%;
+  }
+  .home-button {
+    font-size: 1.5rem;
+  }
+  #home-buttons-container {
+    margin-left: -40%;
+  }
+}

@@ -1,0 +1,53 @@
+#main-nav {
+  background-color: var(--purple);
+  top: 0;
+  width: 100%;
+  z-index: 1;
+  position: fixed;
+}
+
+#nav-content.logged-out {
+  display: grid;
+  align-items: center;
+  grid-template-columns: 25% 25% 25% 25%;
+}
+
+#nav-content.student {
+  display: grid;
+  align-items: center;
+  grid-template-columns: 15% 17% 17% 17% 17% 17%;
+}
+
+#nav-content div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 10vh;
+}
+
+#nav-content div:hover {
+  background-color: var(--lime-green);
+}
+
+#nav-content a {
+  text-decoration: none;
+}
+
+#nav-content a div {
+  color: var(--lime-green);
+  font-size: 17px;
+  font-family: "Cocogose Pro";
+}
+
+#nav-content a div:hover {
+  color: var(--purple);
+}
+
+@media screen and (max-width: 768px) {
+  #nav-content.logged-out a div {
+    font-size: 12px;
+  }
+  #nav-content.student a div {
+    font-size: 10px;
+  }
+}

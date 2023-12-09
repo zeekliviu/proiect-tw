@@ -1,0 +1,42 @@
+#register-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.register-label {
+  font-size: 2.5rem;
+  font-family: "TT Interphases Pro Monospaced";
+  color: white;
+  -webkit-text-stroke-color: black;
+  -webkit-text-stroke-width: 2px;
+}
+
+.register-input {
+  width: 30vw;
+  height: 3vh;
+  margin-bottom: 2vh;
+  margin-top: 2vh;
+  border-radius: 5px;
+  border: 2px solid #000000;
+  font-size: 1.5rem;
+  font-family: "TT Interphases Pro Monospaced";
+}
+
+.error-text {
+  background-color: #000000;
+  color: red;
+  font-size: 12px;
+  font-family: "TT Interphases Pro Monospaced";
+}
+
+@media screen and (max-width: 768px) {
+  .register-label {
+    font-size: 1.5rem;
+    -webkit-text-stroke-width: 1px;
+  }
+  .error-text {
+    font-size: 10px;
+  }
+}

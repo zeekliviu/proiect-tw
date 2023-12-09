@@ -1,0 +1,22 @@
+.register-container {
+  margin-top: 10vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+}
+
+.register-header {
+  font-size: 5rem;
+  color: white;
+  -webkit-text-stroke-color: black;
+  -webkit-text-stroke-width: 0.05px;
+  font-family: "Cocogose Pro";
+}
+
+@media screen and (max-width: 768px) {
+  .register-header {
+    font-size: 3rem;
+  }
+}

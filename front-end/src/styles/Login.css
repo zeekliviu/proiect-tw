@@ -1,0 +1,71 @@
+.login-container {
+  margin-top: 10vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+  background: linear-gradient(to bottom, var(--lime-green), #af49fe);
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 50%;
+}
+
+.login-header {
+  font-family: "TT Interphases Pro Monospaced";
+  font-size: 6rem;
+  color: #fff;
+  margin-top: 20vh;
+  -webkit-text-stroke: 1px #000;
+}
+
+.login-input {
+  width: 100%;
+  height: 50px;
+  border-radius: 5px;
+  border: none;
+  margin-top: 2vh;
+  padding-left: 1vw;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1.5rem;
+}
+
+.login-send {
+  width: 60%;
+  height: 50px;
+  border-radius: 5px;
+  margin-top: 10vh;
+  padding-left: 1vw;
+  font-family: "Cocogose Pro";
+  font-size: 1.5rem;
+}
+
+#login-error {
+  font-family: "Cocogose Pro";
+  font-size: 10px;
+  color: #f00;
+  -webkit-text-stroke: 1px #000;
+}
+
+@media screen and (max-width: 768px) {
+  .login-input {
+    font-size: 1rem;
+    height: 40px;
+    width: 80%;
+  }
+
+  .login-send {
+    font-size: 0.8rem;
+    height: 40px;
+    width: 60%;
+  }
+
+  .login-header {
+    font-size: 3rem;
+  }
+}

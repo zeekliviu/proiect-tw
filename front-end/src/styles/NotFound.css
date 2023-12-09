@@ -1,0 +1,27 @@
+#container-not-found {
+  margin-top: 10vh;
+  position: absolute;
+  top: 30;
+  left: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 80vh;
+  font-family: "TT Interphases Pro Monospaced";
+  color: white;
+}
+
+#header-not-found {
+  font-size: 4rem;
+  text-align: center;
+  margin-top: 5rem;
+}
+
+#paragraph-not-found {
+  font-size: 2rem;
+  text-align: center;
+  width: 50%;
+  margin-top: 2rem;
+}

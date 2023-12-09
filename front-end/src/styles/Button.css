@@ -1,0 +1,12 @@
+button {
+  border-radius: 10px;
+  background-color: var(--purple);
+  color: var(--lime-green);
+  transition: box-shadow 0.5s ease-in-out;
+  font-family: "Cocogose Pro";
+}
+
+button:hover {
+  box-shadow: 0 0 20px var(--lime-green);
+  cursor: pointer;
+}

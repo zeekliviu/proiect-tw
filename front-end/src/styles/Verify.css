@@ -1,0 +1,92 @@
+#verify-page-container {
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(to bottom, var(--lime-green), #af49fe);
+  position: fixed;
+  top: 0;
+}
+
+.verify-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: black;
+  margin-top: 40vh;
+  margin-left: 40vw;
+  width: 20vw;
+  border-radius: 10px;
+}
+
+.verify-header {
+  font-size: 2rem;
+  font-family: "TT Interphases Pro Monospaced";
+  color: var(--purple);
+}
+
+#mail-info {
+  margin-top: 20px;
+  color: gray;
+  font-family: "Monospace Typewritter";
+  margin-bottom: 10px;
+}
+
+#code-inputs {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.code-input {
+  width: 30px;
+  height: 30px;
+  font-size: 1.5em;
+  text-align: center;
+  border: 2px solid #b9ff00;
+  border-radius: 5px;
+  background-color: transparent;
+  color: #b9ff00;
+}
+
+#timer {
+  font-size: 1.2em;
+  margin-bottom: 20px;
+  color: white;
+}
+
+.verify-button {
+  font-size: 30px;
+  margin-bottom: 20px;
+}
+
+@media screen and (max-width: 768px) {
+  .verify-container {
+    margin-top: 30vh;
+    margin-left: 30vw;
+    width: 40vw;
+  }
+
+  .verify-header {
+    font-size: 1rem;
+  }
+
+  #mail-info {
+    font-size: 0.8rem;
+  }
+  #code-inputs {
+    gap: 5px;
+  }
+  .code-input {
+    width: 15px;
+    height: 15px;
+    font-size: 0.8em;
+  }
+  #timer {
+    font-size: 0.8em;
+  }
+  .verify-button {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+}

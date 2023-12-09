@@ -1,0 +1,23 @@
+body {
+  margin: 0px;
+}
+
+@font-face {
+  font-family: "Cocogose Pro";
+  src: url("assets/fonts/cocogose.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "TT Interphases Pro Monospaced";
+  src: url("assets/fonts/tt_interphases_pro_mono.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Monospace Typewritter";
+  src: url("assets/fonts/monospace-typewritter.ttf") format("truetype");
+}
+
+:root {
+  --purple: #af49fe;
+  --lime-green: #b9ff00;
+}

@@ -1,0 +1,139 @@
+.about-container {
+  margin-top: 10vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: linear-gradient(to bottom, var(--lime-green), #af49fe);
+}
+
+#profile-pic {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background-image: url("../assets/images/author.jpg");
+  background-size: cover;
+  background-position: center;
+  border: 2px solid #000;
+}
+
+#gabi,
+#plesky,
+#prof {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background-size: cover;
+  background-position: center;
+  border: 2px solid #000;
+}
+
+#gabi {
+  background-image: url("../assets/images/gabi.jpg");
+}
+
+#plesky {
+  background-image: url("../assets/images/plesky.jpg");
+}
+
+#prof {
+  background-image: url("../assets/images/andrei.jpg");
+}
+
+#gabi:hover,
+#plesky:hover,
+#prof:hover {
+  border: 2px solid var(--lime-green);
+  cursor: pointer;
+}
+
+.about-h3 {
+  font-family: "TT Interphases Pro Monospaced";
+  font-size: 2.5rem;
+}
+
+.about-p,
+.about-ul {
+  font-family: "Cocogose Pro";
+}
+
+.project-purpose,
+.author-info,
+.technologies-used {
+  margin-bottom: 30px;
+}
+
+.about-ul {
+  list-style-type: none;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.about-li {
+  margin-bottom: 5px;
+}
+
+.author-info,
+.project-purpose,
+.technologies-used {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.about-me-links {
+  color: var(--lime-green);
+  text-decoration: none;
+}
+
+.about-me-links:hover {
+  text-decoration: underline;
+}
+
+#about-p-long {
+  width: 50%;
+  text-align: center;
+}
+
+.credits-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 10vw;
+}
+
+.credits-tooltip {
+  visibility: hidden;
+  background-color: #000;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  bottom: 100%;
+  left: 50%;
+  font-size: 11px;
+  margin-left: 10px;
+}
+
+#prof:hover .credits-tooltip,
+#gabi:hover .credits-tooltip,
+#plesky:hover .credits-tooltip {
+  visibility: visible;
+}
+
+@media screen and (max-width: 768px) {
+  .about-ul {
+    grid-template-columns: 1fr;
+  }
+
+  .about-p {
+    width: 80%;
+  }
+
+  .credits-container {
+    grid-template-columns: 1fr;
+  }
+
+  #about-p-long {
+    width: 80%;
+  }
+}
