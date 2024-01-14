@@ -1,0 +1,223 @@
+#grades-fade-loader {
+  margin-top: 40vh;
+}
+
+#grades-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#grades-main-heading {
+  font-size: 2.5rem;
+  font-family: "Cocogose Pro";
+  margin-bottom: 1rem;
+  margin-top: 15vh;
+}
+
+#fetching-grades-paragraph {
+  font-size: 2.5rem;
+  font-family: "TT Interphases Pro Monospaced";
+  margin-bottom: 1rem;
+  color: orange;
+  -webkit-text-stroke: 2px black;
+  margin-top: 5vh;
+}
+
+#grades-project-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 5vh;
+}
+
+#grades-interval-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1px;
+  align-items: center;
+  gap: 4rem;
+  margin-left: 25rem;
+}
+
+.grades-input-date {
+  font-size: 1.5rem;
+  font-family: "TT Interphases Pro Monospaced";
+  margin-bottom: 1rem;
+  margin-top: 5vh;
+}
+
+#grades-interval-label {
+  font-size: 1.5rem;
+  font-family: "TT Interphases Pro Monospaced";
+  margin-bottom: 1rem;
+  color: orange;
+  text-shadow: 1px 1px 1px black;
+  margin-top: 5vh;
+}
+
+#grades-search-button {
+  width: 150px;
+  height: 50px;
+  font-size: 1.5rem;
+  font-family: "TT Interphases Pro Monospaced";
+  margin-bottom: 1rem;
+  margin-top: 5vh;
+  background-color: var(--lime-green);
+  border: none;
+  border-radius: 5px;
+  color: var(--purple);
+  cursor: pointer;
+}
+
+#grades-no-grades {
+  font-size: 1rem;
+  font-family: "TT Interphases Pro Monospaced";
+  margin-bottom: 1rem;
+  color: orange;
+  -webkit-text-stroke: 0.2px black;
+  margin-top: 5vh;
+}
+
+.team-results-name,
+.average-team-results {
+  font-size: 2rem;
+  font-family: "TT Interphases Pro Monospaced";
+  margin-bottom: 1rem;
+  color: salmon;
+  text-shadow: 1px 1px 1px black;
+  margin-top: 5vh;
+}
+
+.deliveries-icon {
+  width: 20pt;
+}
+
+.team-results-table {
+  margin-bottom: 5vh;
+  width: 80vw;
+  border-collapse: collapse;
+  border: 1px solid black;
+  font-size: 1.5rem;
+  font-family: "TT Interphases Pro Monospaced";
+}
+
+.team-results-table td {
+  border: 1px solid black;
+  padding: 10px;
+  text-align: center;
+  color: black;
+}
+
+.team-results-table > tbody > tr:nth-child(even) {
+  background-color: var(--purple);
+}
+.team-results-table > tbody > tr:nth-child(odd) {
+  background-color: white;
+}
+
+.team-results-table th {
+  border: 1px solid black;
+  padding: 10px;
+  text-align: center;
+  background-color: var(--lime-green);
+  color: black;
+}
+
+.team-results-table tbody tr td:nth-child(n) {
+  width: 25%;
+}
+
+@media screen and (max-width: 768px) {
+  #grades-main-heading {
+    font-size: 1.5rem;
+  }
+
+  #fetching-grades-paragraph {
+    font-size: 1.5rem;
+  }
+
+  #grades-interval-label {
+    font-size: 1rem;
+  }
+
+  .grades-input-date {
+    font-size: 1rem;
+  }
+
+  #grades-search-button {
+    width: 80px;
+    height: 30px;
+    margin-top: 5vh;
+    font-size: 1rem;
+  }
+
+  #grades-interval-container {
+    margin-left: 0;
+    gap: 0;
+    display: flex;
+  }
+
+  .team-results-name,
+  .average-team-results {
+    font-size: 1rem;
+  }
+
+  .team-results-table {
+    width: 90vw;
+    font-size: 1rem;
+  }
+
+  .team-results-table td {
+    padding: 5px;
+  }
+
+  .team-results-table th {
+    padding: 5px;
+  }
+
+  .team-results-table tbody tr td:nth-child(n) {
+    width: 25%;
+  }
+
+  .deliveries-icon {
+    width: 15pt;
+  }
+
+  #grades-no-grades {
+    font-size: 1rem;
+  }
+
+  #grades-project-container {
+    margin-top: 5vh;
+  }
+
+  #grades-interval-container {
+    margin-top: 5vh;
+  }
+
+  #grades-no-grades {
+    margin-top: 5vh;
+  }
+
+  #grades-fade-loader {
+    margin-top: 20vh;
+  }
+
+  #grades-container {
+    margin-top: 10vh;
+  }
+
+  #project-missing-deliveries-container {
+    margin-top: 10vh;
+  }
+
+  #grades-project-container {
+    margin-top: 10vh;
+  }
+
+  #grades-interval-container {
+    margin-top: 10vh;
+  }
+}

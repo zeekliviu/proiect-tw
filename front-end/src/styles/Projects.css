@@ -1,0 +1,214 @@
+#projects-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  margin-top: 10vh;
+  z-index: 1;
+}
+
+.projects-fetcher-heading {
+  font-family: "TT Interphases Pro Monospaced";
+  font-size: 1rem;
+  color: white;
+  background-color: var(--purple);
+  z-index: 1;
+}
+
+#clock-loader {
+  margin-top: 30vh;
+}
+
+.deliveries-table {
+  margin-bottom: 5vh;
+  width: 80vw;
+  border-collapse: collapse;
+  border: 1px solid black;
+  font-size: 1.5rem;
+  font-family: "TT Interphases Pro Monospaced";
+}
+
+.deliveries-table td {
+  border: 1px solid black;
+  padding: 10px;
+  text-align: center;
+  color: black;
+}
+
+.deliveries-table > tbody > tr:nth-child(even) {
+  background-color: var(--purple);
+}
+.deliveries-table > tbody > tr:nth-child(odd) {
+  background-color: white;
+}
+
+.deliveries-table th {
+  border: 1px solid black;
+  padding: 10px;
+  text-align: center;
+  background-color: var(--lime-green);
+  color: black;
+}
+
+.deliveries-table tbody tr td:nth-child(n) {
+  width: 25%;
+}
+
+.deliveries-icon {
+  width: 20pt;
+}
+
+.deliveries-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  margin-top: 10vh;
+  z-index: 1;
+}
+
+#project-missing-deliveries-container,
+#projects-missing-project-container {
+  margin-top: 10vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#heading-missing-deliveries,
+#heading-missing-project {
+  margin-top: 30vh;
+  font-family: "TT Interphases Pro Monospaced";
+  font-size: 4rem;
+  color: black;
+  -webkit-text-stroke: 0.1px white;
+  z-index: 1;
+}
+
+#paragraph-missing-deliveries,
+#paragraph-missing-project {
+  font-family: "TT Interphases Pro Monospaced";
+  font-size: 2.5rem;
+  color: black;
+  -webkit-text-stroke: 1px white;
+  z-index: 1;
+}
+
+#deliveries-goto-link,
+#project-goto-link {
+  text-decoration: none;
+}
+
+#deliveries-goto-link:hover,
+#project-goto-link:hover {
+  text-decoration: underline;
+  color: var(--lime-green);
+}
+
+.deliveries-icon {
+  width: 20pt;
+}
+
+#jury-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  margin-top: 10vh;
+  z-index: 1;
+}
+
+.grade-given {
+  border-radius: 25px;
+  border: 2px solid var(--lime-green);
+  padding: 20px;
+  text-align: center;
+  outline: none;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 1rem;
+}
+
+#jury-heading {
+  font-family: "TT Interphases Pro Monospaced";
+  font-size: 2rem;
+  color: coral;
+  text-shadow: 1px 1px 1px black;
+}
+
+#past-deliveries-heading {
+  font-size: 2rem;
+  color: green;
+  -webkit-text-stroke: 2px black;
+  font-family: "Cocogose Pro";
+}
+
+#present-deliveries-heading {
+  font-size: 2rem;
+  color: orange;
+  -webkit-text-stroke: 2px black;
+  font-family: "Cocogose Pro";
+}
+
+#future-deliveries-heading {
+  font-size: 2rem;
+  color: yellow;
+  -webkit-text-stroke: 2px black;
+  font-family: "Cocogose Pro";
+}
+
+.missing-heading {
+  font-size: 1rem;
+  color: red;
+  -webkit-text-stroke: 2px black;
+  font-family: "Cocogose Pro";
+}
+
+#livrabileTrecute,
+#livrabilePrezente,
+#livrabileViitoare {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#error-grading {
+  font-size: 1rem;
+  color: red;
+  -webkit-text-stroke: 2px black;
+  font-family: "Cocogose Pro";
+}
+
+@media screen and (max-width: 768px) {
+  .deliveries-table {
+    width: 10vw;
+    font-size: 1rem;
+  }
+
+  #present-deliveries-heading,
+  #past-deliveries-heading,
+  #future-deliveries-heading {
+    font-size: 1rem;
+    -webkit-text-stroke: 0.5px black;
+  }
+
+  .deliveries-icon {
+    width: 10pt;
+  }
+
+  .missing-heading {
+    font-size: 0.7rem;
+    -webkit-text-stroke: 0.5px black;
+  }
+  #jury-heading {
+    font-size: 1rem;
+  }
+  .grade-given {
+    font-size: 0.7rem;
+    padding: 10px;
+  }
+}

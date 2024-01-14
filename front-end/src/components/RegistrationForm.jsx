@@ -80,8 +80,10 @@ export default function RegistrationForm() {
       if (!value.match(/^[a-zA-Z0-9._%+-]+@stud\.ase\.ro$/))
         return "Email-ul trebuie să fie de forma: nume@stud.ase.ro";
     } else {
-      if (!value.match(/^[a-zA-Z0-9._%+-]+@(ase\.ro|csie\.ase\.ro)$/))
-        return "Email-ul trebuie să fie de forma: nume@[ase.ro|csie.ase.ro]";
+      if (
+        !value.match(/^[a-zA-Z0-9._%+-]+@(ase\.ro|csie\.ase\.ro|ie\.ase\.ro)$/)
+      )
+        return "Email-ul trebuie să fie de forma: nume@[ase.ro|csie.ase.ro|ie.ase.ro]";
     }
     return "";
   };

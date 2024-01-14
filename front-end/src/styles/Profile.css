@@ -13,6 +13,8 @@
   width: 200px;
   height: 200px;
   margin-top: 30vh;
+  border-radius: 50%;
+  outline: 5px outset var(--purple);
 }
 
 #profile-picture:hover {
@@ -20,9 +22,10 @@
 }
 
 #profile-info-container {
+  margin-top: 4rem;
   display: flex;
   flex-direction: column;
-  font: 1.5rem "TT Interphases Pro Monospaced";
+  font: 1rem "TT Interphases Pro Monospaced";
 }
 
 #profile-info-container > div {
@@ -41,10 +44,13 @@
   }
 
   #profile-picture {
+    width: 400px;
+    height: 400px;
     margin-top: 0;
   }
 
   #profile-info-container {
+    font-size: 2rem;
     row-gap: 0;
   }
 }

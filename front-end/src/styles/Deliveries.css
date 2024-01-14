@@ -1,0 +1,104 @@
+#deliveries-container {
+  margin-top: 10vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+}
+
+#deliveries-header {
+  font-size: 5rem;
+  color: black;
+  -webkit-text-stroke-color: whitesmoke;
+  -webkit-text-stroke-width: 0.05px;
+  font-family: "Cocogose Pro";
+}
+
+#deliveries-no-project,
+#deliveries-no-team,
+#deliveries-not-present {
+  font-size: 2rem;
+  color: black;
+  font-family: "Cocogose Pro";
+}
+
+#deliveries-goto-profile {
+  text-decoration: none;
+}
+
+#deliveries-goto-profile:hover {
+  text-decoration: underline;
+  color: var(--lime-green);
+}
+
+#deliveries-table {
+  margin-bottom: 5vh;
+  width: 80vw;
+  border-collapse: collapse;
+  border: 1px solid black;
+  font-size: 1.5rem;
+  font-family: "TT Interphases Pro Monospaced";
+}
+
+#deliveries-table td {
+  border: 1px solid black;
+  padding: 10px;
+  text-align: center;
+  color: black;
+}
+
+#deliveries-table > tbody > tr:nth-child(even) {
+  background-color: var(--purple);
+}
+#deliveries-table > tbody > tr:nth-child(odd) {
+  background-color: white;
+}
+
+#deliveries-table th {
+  border: 1px solid black;
+  padding: 10px;
+  text-align: center;
+  background-color: var(--lime-green);
+  color: black;
+}
+
+#deliveries-table tbody tr td:nth-child(n) {
+  width: 25%;
+}
+
+.deliveries-add-button {
+  font-size: 1.5rem;
+}
+
+@media screen and (max-width: 768px) {
+  #deliveries-header {
+    font-size: 2rem;
+  }
+
+  #deliveries-no-project,
+  #deliveries-no-team,
+  #deliveries-not-present {
+    font-size: 1rem;
+  }
+
+  #deliveries-table {
+    font-size: 0.8rem;
+  }
+
+  #deliveries-table td {
+    padding: 5px;
+  }
+
+  #deliveries-table th {
+    padding: 5px;
+  }
+
+  .deliveries-add-button {
+    font-size: 0.8rem;
+  }
+
+  .deliveries-icon {
+    width: 10pt;
+  }
+}

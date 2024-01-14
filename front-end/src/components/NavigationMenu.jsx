@@ -70,4 +70,29 @@ export default function NavigationMenu() {
         </nav>
       </>
     );
+  else if (calitate === "profesor") {
+    return (
+      <>
+        <nav id="main-nav">
+          <div id="nav-content" className={navClass}>
+            <a href="/">
+              <div>Acasă</div>
+            </a>
+            <a href="/profile">
+              <div>Profil</div>
+            </a>
+            <a href="/grades">
+              <div>Note</div>
+            </a>
+            <a href="/about">
+              <div>Despre</div>
+            </a>
+            <a href="/logout">
+              <div>Deconectare</div>
+            </a>
+          </div>
+        </nav>
+      </>
+    );
+  }
 }

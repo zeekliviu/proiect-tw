@@ -2,7 +2,7 @@
   background-color: var(--purple);
   top: 0;
   width: 100%;
-  z-index: 1;
+  z-index: 69;
   position: fixed;
 }
 
@@ -16,6 +16,12 @@
   display: grid;
   align-items: center;
   grid-template-columns: 15% 17% 17% 17% 17% 17%;
+}
+
+#nav-content.profesor {
+  display: grid;
+  align-items: center;
+  grid-template-columns: 20% 20% 20% 20% 20%;
 }
 
 #nav-content div {
@@ -48,6 +54,9 @@
     font-size: 12px;
   }
   #nav-content.student a div {
+    font-size: 10px;
+  }
+  #nav-content.profesor a div {
     font-size: 10px;
   }
 }

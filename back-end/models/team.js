@@ -7,6 +7,7 @@ const Team = sequelize.define(
     ID: {
       type: DataTypes.INTEGER,
       primaryKey: true,
+      autoIncrement: true,
     },
     Name: {
       type: DataTypes.STRING(20),

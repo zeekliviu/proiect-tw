@@ -2,7 +2,7 @@
   margin-top: 10vh;
   display: flex;
   position: fixed;
-  margin-left: 15%;
+  margin-left: 18vh;
   flex-direction: column;
   align-items: center;
   justify-content: center;
@@ -55,5 +55,8 @@
   }
   #home-buttons-container {
     margin-left: -40%;
+  }
+  #home-container {
+    margin-left: 5vh;
   }
 }

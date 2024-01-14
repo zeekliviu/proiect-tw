@@ -41,6 +41,7 @@ const Student = sequelize.define(
     Verified: {
       type: DataTypes.BOOLEAN,
       allowNull: false,
+      defaultValue: false,
     },
     Jury: {
       type: DataTypes.BOOLEAN,

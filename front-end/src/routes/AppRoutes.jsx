@@ -8,6 +8,10 @@ import Profile from "../pages/Profile";
 import Logout from "../components/Logout";
 import Login from "../pages/Login";
 import ProfileMiddleware from "../components/ProfileMiddleware";
+import Projects from "../pages/Projects";
+import Deliveries from "../pages/Deliveries";
+import NewDelivery from "../components/NewDelivery";
+import Grades from "../pages/Grades";
 
 const routes = [
   { path: "/", element: <Home title="Acasă" /> },
@@ -17,7 +21,11 @@ const routes = [
   { path: "/profile", element: <Profile title="Profil" /> },
   { path: "/profile-middleware", element: <ProfileMiddleware /> },
   { path: "/login", element: <Login title="Autentificare" /> },
+  { path: "/projects", element: <Projects title="Proiecte" /> },
+  { path: "/deliveries", element: <Deliveries title="Livrabile" /> },
+  { path: "/deliveries/new", element: <NewDelivery title="Livrabil nou" /> },
   { path: "/logout", element: <Logout /> },
+  { path: "/grades", element: <Grades title="Note" /> },
   { path: "*", element: <NotFound title="Inexistent" /> },
 ];
 

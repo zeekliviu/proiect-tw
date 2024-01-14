@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { DOMAIN } from "../assets/constants/constants";
 import Button from "../components/Button";
 import "../styles/Login.css";
@@ -15,49 +15,53 @@ export default function Login(props) {
 
   const navigate = useNavigate();
 
+  const [error, setError] = useState("");
+
   const handleLogon = async (e) => {
     e.preventDefault();
-    const error = document.getElementById("login-error");
-    error.innerHTML = "";
     const email = document.getElementById("email").value;
     const password = document.getElementById("password").value;
-    const response = await fetch("http://localhost:3000/api/login", {
+    await fetch("http://localhost:3000/api/login", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({ email, password }),
-    });
-    const data = await response.json();
-    switch (data.message) {
-      case "not_verified":
-        localStorage.setItem("jwt", data.jwt);
-        navigate("/verify", { state: { email: email } });
-        break;
-      case "wrong_credentials":
-        error.innerHTML = "Email sau parolă greșită!";
-        break;
-      case "logged_in":
-        localStorage.setItem("calitate", data.calitate);
-        navigate("/profile-middleware", { state: { jwt: data.jwt } });
-        break;
-    }
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        switch (data.message) {
+          case "not_verified":
+            localStorage.setItem("jwt", data.jwt);
+            navigate("/verify", { state: { email: data.email } });
+            break;
+          case "wrong_credentials":
+            setError("Email sau parolă greșită!");
+            break;
+          case "logged_in":
+            localStorage.setItem("calitate", data.calitate);
+            navigate("/profile-middleware", { state: { jwt: data.jwt } });
+            break;
+        }
+      });
   };
   return (
     <>
       <div className="login-container">
         <h1 className="login-header">Autentificare</h1>
-        <span id="login-error"></span>
+        <span id="login-error">{error}</span>
         <form className="login-form" onSubmit={handleLogon}>
           <input
+            onChange={() => setError("")}
             type="text"
             name="email"
             id="email"
             className="login-input"
-            placeholder="Email"
+            placeholder="Email sau Username"
             required
           />
           <input
+            onChange={() => setError("")}
             type="password"
             name="password"
             id="password"

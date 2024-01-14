@@ -29,7 +29,7 @@ const TOKEN_HEADER_KEY = {
     "d19fca1eab7f741f4e3cf7fc4150f77dbd36554e5e04e4c236bd76be2034ee44efa8d90dd1d399027b223dcac99756d7",
 };
 
-const MAIL_TEMPLATE = (username, pin) => `<!DOCTYPE html>
+const VERIFY_MAIL_TEMPLATE = (username, pin) => `<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -90,12 +90,98 @@ const MAIL_TEMPLATE = (username, pin) => `<!DOCTYPE html>
 
 `;
 
+const NOTIFY_MAIL_TEMPLATE = (name, data, echipa) =>
+  `<!DOCTYPE html>
+  <html>
+  <head>
+      <title>Jury Selection Congratulations</title>
+      <style>
+          .email-container {
+              max-width: 600px;
+              margin: 0 auto;
+              background-color: #fff;
+              padding: 20px;
+              font-family: 'Arial', sans-serif;
+              color: #333;
+              border-radius: 8px;
+              box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+          }
+          .header {
+              background-color: #af49fe;
+              color: white;
+              padding: 10px;
+              text-align: center;
+              border-top-left-radius: 8px;
+              border-top-right-radius: 8px;
+              font-size: 24px;
+              font-weight: bold;
+          }
+          .content {
+              padding: 20px;
+              background-color: #f3f3f3;
+              border: 2px solid #b9ff00;
+              border-radius: 5px;
+          }
+          .important-section {
+              background-color: #ffecb3; /* Light yellow background for importance */
+              padding: 15px;
+              margin-top: 20px;
+              border-radius: 5px;
+              border: 1px solid #ffd700; /* Gold border */
+              font-weight: bold;
+          }
+          .footer {
+              text-align: center;
+              padding: 10px;
+              font-size: 0.8em;
+              background-color: #b9ff00;
+              color: #333;
+              border-bottom-left-radius: 8px;
+              border-bottom-right-radius: 8px;
+          }
+          .content p, .important-section p {
+              font-size: 1.1em;
+          }
+      </style>
+  </head>
+  <body>
+      <div class="email-container">
+          <div class="header">
+              Felicitări! 🎉
+          </div>
+          <div class="content">
+              <p>Salut, ${name}! 👋🏻</p>
+              <p>Ai fost selectat să participi în juriul livrabilului din data de <b>${data}</b> a echipei <b><i>${echipa}</i></b>.</p>
+              <p>Nu uita să intri până la acea dată pe site-ul nostru ca să-ți exprimi părerea despre livrabil! 😉</p>
+  
+              <!-- Important Notation Process Section -->
+              <div class="important-section">
+                  <p>Procesul de notare:</p>
+                  <ul>
+                    <li>Accesează pagina <i>Proiecte</i> pe website.</li>
+                      <li>Urmărește videoclipul de prezentare sau intră pe link-ul pus la dispoziție.</li>
+                      <li>În dreptul livrabilului, introdu nota cu până la două zecimale și apasă ENTER.</li>
+                  </ul>
+                  <p>NU UITA: Notarea corectă și obiectivă este crucială pentru evaluarea proiectelor.</p>
+              </div>
+              <p>Odată ce ai notat livrabilul, ai 30 de minute să îți modifici nota. După aceea, orice altă modificare va fi respinsă.</p>
+              <p>Pe curând,<br/>Zeth Web App</p>
+          </div>
+          <div class="footer">
+              Acesta este un mesaj automat. Nu încerca să răspunzi!
+          </div>
+      </div>
+  </body>
+  </html>
+  `;
+
 module.exports = {
   SMTP_ADDR,
   SMTP_PORT,
   SMTP_USER,
   SMTP_PASS,
-  MAIL_TEMPLATE,
+  VERIFY_MAIL_TEMPLATE,
   JWT_SECRET,
   TOKEN_HEADER_KEY,
+  NOTIFY_MAIL_TEMPLATE,
 };
