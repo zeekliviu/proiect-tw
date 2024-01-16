@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { DOMAIN } from "../assets/constants/constants";
+import { DOMAIN, DOMAIN_NS } from "../assets/constants/constants";
 import Imagine from "../assets/images/new_delivery.gif";
 import Button from "./Button";
 import "../styles/NewDelivery.css";
@@ -14,7 +14,9 @@ export default function NewDelivery(props) {
       document.title = `${props.title} | ${DOMAIN}`;
     }
   }, [props.title]);
-  const dateMin = new Date()
+  const auxDate = new Date();
+  auxDate.setDate(auxDate.getDate() + 1);
+  const dateMin = auxDate
     .toLocaleDateString()
     .split(",")[0]
     .split(".")
@@ -65,7 +67,7 @@ export default function NewDelivery(props) {
         object.video = reader.result;
       };
     } else object.hasVideo = false;
-    await fetch("http://localhost:3000/api/new-delivery", {
+    await fetch(`${DOMAIN_NS}/api/new-delivery`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -77,7 +79,7 @@ export default function NewDelivery(props) {
       .then(async (res) => {
         if (res.message === "success") {
           if (object.hasOwnProperty("video")) {
-            await fetch("http://localhost:3000/api/upload-video", {
+            await fetch(`${DOMAIN_NS}/api/upload-video`, {
               method: "POST",
               headers: {
                 Authorization: `Bearer ${localStorage.getItem("jwt")}`,

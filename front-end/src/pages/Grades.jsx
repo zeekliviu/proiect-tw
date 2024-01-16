@@ -1,5 +1,5 @@
 import "../styles/Grades.css";
-import { DOMAIN } from "../assets/constants/constants";
+import { DOMAIN, DOMAIN_NS } from "../assets/constants/constants";
 import { useEffect, useState } from "react";
 import SyncLoader from "react-spinners/SyncLoader";
 import liveImg from "../assets/images/now.gif";
@@ -22,7 +22,7 @@ const RenderComponent = () => {
       stop = aux;
     }
     setLoading(true);
-    const response = await fetch("http://localhost:3000/api/proiecte", {
+    const response = await fetch(`${DOMAIN_NS}/api/proiecte`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { DOMAIN } from "../assets/constants/constants";
+import { DOMAIN, DOMAIN_NS } from "../assets/constants/constants";
 import "../styles/Profile.css";
 import Button from "../components/Button";
 
@@ -29,7 +29,7 @@ export default function Profile(props) {
     } else {
       document.title = props.title + " | " + document.title;
       (async () => {
-        await fetch("http://localhost:3000/api/profile-info", {
+        await fetch(`${DOMAIN_NS}/api/profile-info`, {
           method: "GET",
           headers: {
             "Content-Type": "application/json",
@@ -88,7 +88,7 @@ export default function Profile(props) {
       const reader = new FileReader();
       reader.readAsDataURL(image.files[0]);
       reader.onloadend = async () => {
-        await fetch("http://localhost:3000/api/upload-avatar", {
+        await fetch(`${DOMAIN_NS}/api/upload-avatar`, {
           method: "POST",
           headers: {
             Authorization: `Bearer ${localStorage.getItem("jwt")}`,
@@ -110,7 +110,7 @@ export default function Profile(props) {
     if (teamName === null || teamName?.length === 0)
       alert("Numele echipei nu poate fi gol");
     else {
-      await fetch("http://localhost:3000/api/create-team", {
+      await fetch(`${DOMAIN_NS}/api/create-team`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -137,7 +137,7 @@ export default function Profile(props) {
     if (teamName === null || teamName?.length === 0)
       alert("Numele echipei nu poate fi gol");
     else {
-      await fetch("http://localhost:3000/api/join-team", {
+      await fetch(`${DOMAIN_NS}/api/join-team`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -150,7 +150,7 @@ export default function Profile(props) {
           if (res.message === "joined") {
             setAfisareButonCreareEchipa(false);
             setAfisareButonAlaturareEchipa(false);
-            await fetch("http://localhost:3000/api/profile-info", {
+            await fetch(`${DOMAIN_NS}/api/profile-info`, {
               method: "GET",
               headers: {
                 "Content-Type": "application/json",
@@ -182,7 +182,7 @@ export default function Profile(props) {
     if (projectName === null || projectName?.length === 0)
       alert("Numele proiectului nu poate fi gol");
     else {
-      await fetch("http://localhost:3000/api/create-project", {
+      await fetch(`${DOMAIN_NS}/api/create-project`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -226,7 +226,7 @@ export default function Profile(props) {
                 if (numeNou === null || numeNou?.length === 0)
                   alert("Numele nu poate fi gol");
                 else {
-                  await fetch("http://localhost:3000/api/change-name", {
+                  await fetch(`${DOMAIN_NS}/api/change-name`, {
                     method: "PUT",
                     headers: {
                       "Content-Type": "application/json",

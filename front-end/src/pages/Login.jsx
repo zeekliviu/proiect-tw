@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { DOMAIN } from "../assets/constants/constants";
+import { DOMAIN, DOMAIN_NS } from "../assets/constants/constants";
 import Button from "../components/Button";
 import "../styles/Login.css";
 import { useNavigate } from "react-router-dom";
@@ -21,7 +21,7 @@ export default function Login(props) {
     e.preventDefault();
     const email = document.getElementById("email").value;
     const password = document.getElementById("password").value;
-    await fetch("http://localhost:3000/api/login", {
+    await fetch(`${DOMAIN_NS}/api/login`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

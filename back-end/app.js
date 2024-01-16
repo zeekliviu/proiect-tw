@@ -438,34 +438,6 @@ app.post("/api/new-delivery", verifyToken, async (req, res) => {
     Link: link ? link : null,
     StudentID: student.ID,
   });
-  // alegerea juriului
-  // try {
-  //   const studentiFaraEchipa = await Student.findAll({
-  //     where: { Jury: true },
-  //   });
-  //   const shuffle = (array) => {
-  //     for (let i = array.length - 1; i > 0; i--) {
-  //       let j = Math.floor(Math.random() * (i + 1));
-  //       [array[i], array[j]] = [array[j], array[i]];
-  //     }
-  //     return array;
-  //   };
-  //   const studentiFaraEchipaAmestecati = shuffle(studentiFaraEchipa);
-  //   const studentiJuriu = studentiFaraEchipaAmestecati.slice(0, 3);
-  //   await Promise.all(
-  //     studentiJuriu.map(async (studentJuriu) => {
-  //       await Jury.create({ PartID: part.ID, StudentID: studentJuriu.ID });
-  //       await transporter.sendMail({
-  //         from: `"Zeth Web Notifier 💻" <${decrypt(SMTP_USER, key)}>`,
-  //         to: studentJuriu.Email,
-  //         subject: "Ai fost ales ca membru al juriului!",
-  //         html: NOTIFY_MAIL_TEMPLATE(studentJuriu.Name, date, team.Name),
-  //       });
-  //     })
-  //   );
-  // } catch (err) {
-  //   console.log(err);
-  // }
   return res.status(200).json({ message: "success", partID: part.ID });
 });
 

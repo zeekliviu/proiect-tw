@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import "../styles/Verify.css";
-import { DOMAIN } from "../assets/constants/constants";
+import { DOMAIN, DOMAIN_NS } from "../assets/constants/constants";
 import Button from "../components/Button";
 
 export default function Verify(props) {
@@ -50,17 +50,14 @@ export default function Verify(props) {
   }, []);
 
   const resendCode = async () => {
-    const response = await fetch(
-      "http://localhost:3000/api/verify/resend-code",
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: `Bearer ${jwt}`,
-        },
-        body: JSON.stringify({ email: email }),
-      }
-    );
+    const response = await fetch(`${DOMAIN_NS}/api/verify/resend-code`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${jwt}`,
+      },
+      body: JSON.stringify({ email: email }),
+    });
     const data = await response.json();
     if (data.message === "sent") {
       setTime(RESEND_CODE_TIME);
@@ -77,7 +74,7 @@ export default function Verify(props) {
 
   const verifyCode = async () => {
     const code = composeCode();
-    const response = await fetch("http://localhost:3000/api/verify", {
+    const response = await fetch(`${DOMAIN_NS}/api/verify`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -137,17 +134,14 @@ export default function Verify(props) {
     } else {
       document.getElementById("verify-email-text").innerText = email;
     }
-    const response = await fetch(
-      "http://localhost:3000/api/verify/change-email",
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: `Bearer ${jwt}`,
-        },
-        body: JSON.stringify({ email: email }),
-      }
-    );
+    const response = await fetch(`${DOMAIN_NS}/api/verify/change-email`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${jwt}`,
+      },
+      body: JSON.stringify({ email: email }),
+    });
     const data = await response.json();
     if (data.message === "changed") {
       alert("Codul a fost trimis la noul mail!");

@@ -2,6 +2,7 @@ import { useState } from "react";
 import Button from "./Button";
 import "../styles/RegistrationForm.css";
 import { useNavigate } from "react-router-dom";
+import { DOMAIN_NS } from "../assets/constants/constants";
 
 export default function RegistrationForm() {
   const [formData, setFormData] = useState({
@@ -141,7 +142,7 @@ export default function RegistrationForm() {
       calitate: formData.calitate,
     };
 
-    const registerReq = await fetch("http://localhost:3000/api/register", {
+    const registerReq = await fetch(`${DOMAIN_NS}/api/register`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

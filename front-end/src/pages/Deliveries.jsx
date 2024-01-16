@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
-import { DOMAIN } from "../assets/constants/constants";
+import { DOMAIN, DOMAIN_NS } from "../assets/constants/constants";
 import Imagine from "../assets/images/deliveries.gif";
 import Video_Placeholder from "../assets/images/video_placeholder.png";
 import Link_Placeholder from "../assets/images/link_placeholder.png";
@@ -20,7 +20,7 @@ export default function Deliveries(props) {
     } else {
       document.title = `${props.title} | ${DOMAIN}`;
       (async () => {
-        await fetch("http://localhost:3000/api/profile-info", {
+        await fetch(`${DOMAIN_NS}/api/profile-info`, {
           method: "GET",
           headers: {
             "Content-Type": "application/json",
@@ -31,7 +31,7 @@ export default function Deliveries(props) {
           .then(async (res) => {
             if (res.hasOwnProperty("project")) setUserHasProject(true);
             if (res.hasOwnProperty("team")) setUserHasTeam(true);
-            await fetch("http://localhost:3000/api/get-deliveries", {
+            await fetch(`${DOMAIN_NS}/api/get-deliveries`, {
               method: "GET",
               headers: {
                 "Content-Type": "application/json",

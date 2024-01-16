@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { DOMAIN } from "../assets/constants/constants";
+import { DOMAIN, DOMAIN_NS } from "../assets/constants/constants";
 import "../styles/Projects.css";
 import forbidImg from "../assets/images/403.gif";
 import noDataImg from "../assets/images/no_data.gif";
@@ -23,7 +23,7 @@ const JuryComponent = ({ juryDeliveries }) => {
         alert("Nota trebuie sa fie intre 1 si 10!");
         return;
       }
-      await fetch("http://localhost:3000/api/grade-delivery", {
+      await fetch(`${DOMAIN_NS}/api/grade-delivery`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -273,7 +273,7 @@ export default function Projects(props) {
 
   useEffect(() => {
     const fetchUserData = async () => {
-      const profileRes = await fetch("http://localhost:3000/api/profile-info", {
+      const profileRes = await fetch(`${DOMAIN_NS}/api/profile-info`, {
         method: "GET",
         headers: {
           "Content-Type": "application/json",
@@ -287,16 +287,13 @@ export default function Projects(props) {
         setLoading(false);
       } else {
         if (profileData.team && profileData.project) {
-          const deliveriesRes = await fetch(
-            "http://localhost:3000/api/get-deliveries",
-            {
-              method: "GET",
-              headers: {
-                "Content-Type": "application/json",
-                Authorization: `Bearer ${localStorage.getItem("jwt")}`,
-              },
-            }
-          );
+          const deliveriesRes = await fetch(`${DOMAIN_NS}/api/get-deliveries`, {
+            method: "GET",
+            headers: {
+              "Content-Type": "application/json",
+              Authorization: `Bearer ${localStorage.getItem("jwt")}`,
+            },
+          });
           const deliveriesData = await deliveriesRes.json();
           if (deliveriesData.hasOwnProperty("error")) {
             setSrcImg(noDataImg);
@@ -316,16 +313,13 @@ export default function Projects(props) {
             livrabile: [],
           });
         }
-        const juryRes = await fetch(
-          "http://localhost:3000/api/get-jury-deliveries",
-          {
-            method: "GET",
-            headers: {
-              "Content-Type": "application/json",
-              Authorization: `Bearer ${localStorage.getItem("jwt")}`,
-            },
-          }
-        );
+        const juryRes = await fetch(`${DOMAIN_NS}/api/get-jury-deliveries`, {
+          method: "GET",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${localStorage.getItem("jwt")}`,
+          },
+        });
         const juryData = await juryRes.json();
         if (juryData.hasOwnProperty("error")) {
           setJuryDeliveries([]);
